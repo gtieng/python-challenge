@@ -57,26 +57,20 @@ for check in vote_list:
 
 #TASK B-4: Use a while loop to set upper threshold of candidates when tallying votes.
 
-counter_max = 0
-while counter_max <= max(candidate_id):
+loop_max = 0
+while loop_max <= max(candidate_id):
+    
     for tally in vote_list:
-        if tally == candidates[counter_max]:
-            vote_counter[counter_max] = vote_counter[counter_max] + 1
-    counter_max = counter_max + 1
+        if tally == candidates[loop_max]:
+            vote_counter[loop_max] = vote_counter[loop_max] + 1
 
-#TASK C
-percent_max = 0
-while percent_max <= max(candidate_id):
-    percent.append(round((vote_counter[percent_max] / len(vote_list)) * 100, 3))
-    percent_max = percent_max + 1
+    percent.append(round((vote_counter[loop_max] / len(vote_list)) * 100, 3))
 
-#TASK D
-winner_max = 0
-while winner_max <= max(candidate_id):
     for biggest in vote_counter:
-        if vote_counter[winner_max] == max(vote_counter):
-            winner = candidates[winner_max]
-    winner_max = winner_max + 1
+        if vote_counter[loop_max] == max(vote_counter):
+            winner = candidates[loop_max]
+            
+    loop_max = loop_max + 1
 
     
 #Step 4: Print the results
